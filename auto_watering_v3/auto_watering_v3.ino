@@ -12,7 +12,7 @@ void setup() {
   pinMode(sensorPin, INPUT);
   pinMode(relayPin, OUTPUT);
 
-  lcd.begin();  // Initialize the LCD
+  lcd.init();       // initialize the lcd 
   lcd.backlight();  // Turn on the backlight
 }
 

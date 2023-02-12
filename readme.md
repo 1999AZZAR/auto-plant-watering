@@ -75,15 +75,16 @@ void loop() {
   lcd.clear();  // Clear the display
   lcd.setCursor(0, 0);  // Set the cursor to the first row, first column
   lcd.print("Value: ");
-lcd.print(sensorValue);
-lcd.print("%");
-lcd.setCursor(0, 1); // Set the cursor to the second row, first column
-lcd.print("Min: ");
-lcd.print(minThreshold);
-lcd.print("% Max: ");
-lcd.print(maxThreshold);
-lcd.print("%");
-delay(500); // Wait for 500 milliseconds
+  lcd.print(sensorValue);
+  lcd.print("%");
+  lcd.setCursor(0, 1); // Set the cursor to the second row, first column
+  lcd.print("Min: ");
+  lcd.print(minThreshold);
+  lcd.print("% Max: ");
+  lcd.print(maxThreshold);
+  lcd.print("%");
+
+  delay(500); // Wait for 500 milliseconds
 }
 ```
 

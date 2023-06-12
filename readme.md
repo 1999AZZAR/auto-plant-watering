@@ -95,3 +95,21 @@ void loop() {
 The `if` statement checks if the `sensorValue` is less than the `minThreshold`. If it is, the relay is turned on by setting the `relayPin` to `HIGH`. If the `sensorValue` is greater than or equal to the `maxThreshold`, the relay is turned off by setting the `relayPin` to `LOW`.
 
 The LCD display is then updated to show the current `sensorValue`, as well as the `minThreshold` and `maxThreshold`. The display is cleared and the cursor is set to the first row, first column. The current `sensorValue` is printed, followed by the `%` symbol. The cursor is then set to the second row, first column. The text `Min: ` is printed, followed by the `minThreshold` value and the `%` symbol. The text `Max: ` is printed, followed by the `maxThreshold` value and the `%` symbol. The sketch then waits for 500 milliseconds before repeating the loop.
+
+## Flowchart 
+
+```mermaid
+graph LR
+A[Start] --> B(Setup)
+B --> C[Initialize Pins and LCD]
+C --> D[Loop]
+D --> E{Read Sensor Value}
+E -- Yes --> F{Sensor Value < Min Threshold?}
+F -- Yes --> G[Turn Relay On]
+F -- No --> H{Sensor Value >= Max Threshold?}
+H -- Yes --> I[Turn Relay Off]
+H -- No --> J[Update LCD Display]
+J --> D
+I --> J
+E -- No --> J
+```
